@@ -1,5 +1,6 @@
 const { Client, Intents } = require('discord.js');
 const dotenv = require('dotenv');
+const help = require('./zoom/help');
 const math = require('./zoom/math');
 const fr = require('./zoom/fr');
 const es = require('./zoom/es');
@@ -22,6 +23,9 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', (message) => {
+    if (message.content === prefix + 'help') {
+        message.reply({embeds: [help]});
+    } else
     if (message.content === prefix + 'math') {
         message.reply({embeds: [math]});
     } else 
