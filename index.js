@@ -4,7 +4,7 @@ const math = require('./zoom/math');
 const fr = require('./zoom/fr');
 const es = require('./zoom/es');
 const hg = require('./zoom/hg');
-const sc = require('./zoom/sc');
+const sp = require('./zoom/sp');
 const eps = require('./zoom/eps');
 const svt = require('./zoom/svt');
 const tech = require('./zoom/tech');
@@ -34,8 +34,8 @@ client.on('messageCreate', (message) => {
     if (message.content === prefix + 'hg' || message.content === prefix + 'hg si') {
         message.reply({embeds: [hg]});
     } else
-    if (message.content === prefix + 'sc') {
-        message.reply({embeds: [sc]});
+    if (message.content === prefix + 'sp') {
+        message.reply({embeds: [sp]});
     } else
     if (message.content === prefix + 'eps') {
         message.reply({embeds: [eps]});

@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 
-const SC = new MessageEmbed()
+const SP = new MessageEmbed()
     .setTitle('Sciences Physiques')
     .setURL('https://us04web.zoom.us/j/71187461081?pwd=U084TzNKbjN2SVdWRG9wanQ0dDJDUT09')
     .addFields(
@@ -10,4 +10,4 @@ const SC = new MessageEmbed()
         { name: 'Code Secret', value: '28TmQF'}
     );
 
-module.exports = SC;
+module.exports = SP;
