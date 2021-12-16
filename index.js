@@ -1,4 +1,5 @@
-const { Client, Intents } = require('discord.js');
+const { Client, Intents, Collection } = require('discord.js');
+const fs = require('fs');
 const dotenv = require('dotenv');
 const help = require('./zoom/help');
 const math = require('./zoom/math');
@@ -12,10 +13,19 @@ const tech = require('./zoom/tech');
 const si = require('./zoom/si');
 dotenv.config();
 
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+
+client.commands = new Collection();
+
+const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));   
+for(const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+
+    client.commands.set(command.name, command);
+}
+
 const token = process.env.TOKEN;
 const prefix = process.env.PREFIX;
-
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 client.on('ready', () => {
     console.log('ready');
