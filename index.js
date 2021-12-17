@@ -17,8 +17,9 @@ const token = process.env.TOKEN;
 const prefix = process.env.PREFIX;
 
 client.on('ready', () => {
-    console.log('ready');
-    client.user.setPresence({ activities: [{ name: 'Beating My Wife'}], status: 'idle'});
+    console.log(`Logged in as ${client.user.tag}`);
+    client.user.setActivity('Beating My Wife', { type: 'WATCHING' });
+    client.user.setPresence({ status: 'idle' });
 });
 
 client.on('messageCreate', (message) => {
@@ -29,6 +30,7 @@ client.on('messageCreate', (message) => {
 
     switch(command) {
         case 'zoom': client.commands.get('zoom').execute(message, args); break;
+        case 'clear': client.commands.get('clear').execute(message, args); break;
     }
 });
 

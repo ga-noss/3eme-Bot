@@ -24,6 +24,15 @@ module.exports = {
                 { name: 'ID', value: '871 322 6270'},
                 { name: 'Code Secret', value: '9iegFP'}
             );
+        const FR = new MessageEmbed()
+            .setTitle('Français')
+            .setURL('https://us02web.zoom.us/j/84926871567?pwd=WGd6Vk4ydDMzVXNuYmEveXlpNUorUT09')
+            .addFields(
+                { name: 'Professeur', value: 'Monsieur Jarlegand'},
+                { name: 'Lien Zoom', value: 'https://us02web.zoom.us/j/84926871567?pwd=WGd6Vk4ydDMzVXNuYmEveXlpNUorUT09'},
+                { name: 'ID', value: '849 2687 1567'},
+                { name: 'Code Secret', value: 'RWTRA9'}
+            );
         const MATH = new MessageEmbed()
             .setTitle('Math')
             .setURL('https://us05web.zoom.us/j/6623063711?pwd=RXRLUTFVdUZ4czd2a3NrNkxHbFVuUT09')
