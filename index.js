@@ -28,7 +28,7 @@ client.on('messageCreate', (message) => {
     const command = args.shift().toLowerCase();
 
     switch(command) {
-        case 'zoom': client.commands.get('zoom').execute(message.args);
+        case 'zoom': client.commands.get('zoom').execute(message, args); break;
     }
 });
 
