@@ -12,11 +12,18 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.7.0",
+    "discord-player": "^5.2.0",
+    "discord-ytdl-core": "^5.0.4",
     "discord.js": "^13.3.1",
     "dotenv": "^10.0.0",
     "ffmpeg-static": "^4.4.0",
+    "merge-options": "^3.0.4",
+    "node-fetch": "^3.1.0",
     "nodemon": "^2.0.15",
+    "spotify-url-info": "^2.2.3",
     "yt-search": "^2.10.2",
-    "ytdl-core": "^4.9.2"
+    "ytdl-core": "^4.9.2",
+    "ytpl": "^2.2.3",
+    "ytsr": "^3.5.3"
   }
 }
