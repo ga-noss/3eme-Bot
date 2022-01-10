@@ -14,21 +14,22 @@ module.exports = {
             )
 
         const zoomHelp = new MessageEmbed()
-            .setTitle('Zoom command')
+            .setTitle('Zoom')
             .setThumbnail('https://i.imgur.com/9zAAR9q.png')
             .addFields(
                 { name: 'Utility', value: 'Use this command to know the zoom link of a subject\n `;zoom [subject]`'},
                 { name: 'All Subjects', value: 'Sport : eps \n Espagnol : es \nFrançais : fr \nHistoire Géographie :  hg \nHistoire Géographie SI : hg si \nMaths : math \nSection Internationale : si \nSciences Physiques : sp \nSVT : svt \nTechnologie : techno \n', inline: true}
             )
 
-        const zoomHelp = new MessageEmbed()
-            .setTitle('Zoom commands')
+        const clearHelp = new MessageEmbed()
+            .setTitle('Clear')
             .addFields(
                 { name: 'Utility', value: 'Use this command to clear messages in the channel\n `;clear [number of message you want to delete]`'},
             )
 
         switch(args[0]) {
-            case 'zoom': message.reply({ embeds: [zoomHelp] }); break;
+            case 'zoom' : message.reply({ embeds: [zoomHelp] }); break;
+            case 'clear': message.reply({ embeds: [clearHelp] }); break;
             default: message.reply({ embeds: [help] });
         }
     }

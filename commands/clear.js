@@ -8,6 +8,6 @@ module.exports = {
             message.reply('Please enter a valid argument')
         } else {
             message.channel.bulkDelete(num);
-        }      
+        }
     }
 }

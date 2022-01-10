@@ -6,15 +6,15 @@ module.exports = {
     execute(message, args) {
         if(!args[0]) return message.reply('Please enter the subject you want the zoom link'); 
 
-        const EPS = require('../zoom/eps');
-        const ES = require('../zoom/es');
-        const FR = require('../zoom/fr');
-        const HG = require('../zoom/hg');
-        const MATH = require('../zoom/math');
-        const SI = require('../zoom/si');
-        const SP = require('../zoom/sp');
-        const SVT = require('../zoom/svt');
-        const TECH = require('../zoom/tech');
+        const EPS = require('../zoomEmbed/eps');
+        const ES = require('../zoomEmbed/es');
+        const FR = require('../zoomEmbed/fr');
+        const HG = require('../zoomEmbed/hg');
+        const MATH = require('../zoomEmbed/math');
+        const SI = require('../zoomEmbed/si');
+        const SP = require('../zoomEmbed/sp');
+        const SVT = require('../zoomEmbed/svt');
+        const TECH = require('../zoomEmbed/tech');
     
         switch(args[0]) {
             case 'eps'                  : message.reply({embeds: [EPS]}); break;
