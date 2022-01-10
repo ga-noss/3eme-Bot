@@ -2,12 +2,14 @@ module.exports = {
     name: 'clear',
     description: 'Clear messages',
     execute(message, args) {
-        const num = parseInt(args[0], 10);
+        const clearHelp = require('../Embeds/commandsEmbed/clear')
 
-        if (isNaN(num)) {
-            message.reply('Please enter a valid argument')
-        } else {
+        const num = parseInt(args[0], 10) + 1;
+
+        if (!isNaN(num)) {
             message.channel.bulkDelete(num);
+        } else {
+            message.reply({embeds: [clearHelp]})
         }
     }
 }
