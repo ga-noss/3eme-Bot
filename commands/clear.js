@@ -2,7 +2,12 @@ module.exports = {
     name: 'clear',
     description: 'Clear messages',
     execute(message, args) {
-        message.delete();
-        message.channel.bulkDelete(args[0]);
+        const num = parseInt(args[0], 10);
+
+        if (isNaN(num)) {
+            message.reply('Please enter a valid argument')
+        } else {
+            message.channel.bulkDelete(num);
+        }      
     }
 }
