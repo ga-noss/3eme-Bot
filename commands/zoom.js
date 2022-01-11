@@ -1,10 +1,8 @@
-const { MessageEmbed } = require('discord.js');
-
 module.exports = {
     name: 'zoom',
     description: 'Send the zoom link',
     execute(message, args) {
-        const zoomHelp = require('../Embeds/commandsEmbed/zoom')
+        const zoomHelp = require('../Embeds/commandsHelpEmbed/zoom')
 
         const EPS = require('../Embeds/zoomEmbed/eps');
         const ES = require('../Embeds/zoomEmbed/es');
