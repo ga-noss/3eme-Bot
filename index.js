@@ -4,6 +4,8 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 const dotenv = require('dotenv');
 dotenv.config();
 
+const ytdl = require('ytdl-core');
+
 const fs = require('fs');
 client.commands = new Collection();
 const commandsFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js')); 
@@ -23,6 +25,10 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', (message) => {
+    if(message.author.id == '571027211407196161' && message.channelId == '826347751113490492') {
+        message.delete();
+    }
+    
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -32,8 +38,11 @@ client.on('messageCreate', (message) => {
         case 'zoom': client.commands.get('zoom').execute(message, args); break;
         case 'clear': client.commands.get('clear').execute(message, args); break;
         case 'wiki': client.commands.get('wiki').execute(message, args); break;
+        case 'test': client.commands.get('test').execute(message, args); break;
         case 'help': client.commands.get('help').execute(message, args); break;
     }
+
+    
 });
 
 client.login(token);
