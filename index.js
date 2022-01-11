@@ -18,7 +18,7 @@ const prefix = process.env.PREFIX;
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}`);
-    client.user.setActivity('Beating My Wife', { type: 'WATCHING' });
+    client.user.setActivity('beating his wife', { type: 'PLAYING' });
     client.user.setPresence({ status: 'idle' });
 });
 
