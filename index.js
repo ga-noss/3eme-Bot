@@ -4,8 +4,6 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 const dotenv = require('dotenv');
 dotenv.config();
 
-const ytdl = require('ytdl-core');
-
 const fs = require('fs');
 client.commands = new Collection();
 const commandsFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js')); 
@@ -41,8 +39,6 @@ client.on('messageCreate', (message) => {
         case 'test': client.commands.get('test').execute(message, args); break;
         case 'help': client.commands.get('help').execute(message, args); break;
     }
-
-    
 });
 
 client.login(token);
