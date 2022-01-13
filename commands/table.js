@@ -12,7 +12,7 @@ module.exports = {
         const argus = String(args[0]).toLowerCase()
 
         switch(argus) {
-            case '3b_si' || '3bsi': message.reply({ embeds: [tableSI]}); break;
+            case '3b_si': message.reply({ embeds: [tableSI]}); break;
             default : message.reply({ embeds: [tableHelp]})
         }
     }
