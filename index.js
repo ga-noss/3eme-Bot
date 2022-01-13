@@ -23,8 +23,10 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', (message) => {
-    if(message.author.id == '571027211407196161' && message.channelId == '826347751113490492') {
-        message.delete();
+    if(message.author.id == '571027211407196161') {
+        if(message.channelId == '826347751113490492' || message.channelId == '752507485751083049') {
+            message.delete();
+        }      
     }
     
     if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -37,6 +39,7 @@ client.on('messageCreate', (message) => {
         case 'clear': client.commands.get('clear').execute(message, args); break;
         case 'wiki': client.commands.get('wiki').execute(message, args); break;
         case 'test': client.commands.get('test').execute(message, args); break;
+        case 'table': client.commands.get('table').execute(message, args); break;
         case 'help': client.commands.get('help').execute(message, args); break;
     }
 });

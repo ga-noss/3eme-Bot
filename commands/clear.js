@@ -1,3 +1,5 @@
+const { Permissions } = require('discord.js');
+
 module.exports = {
     name: 'clear',
     description: 'Clear messages',
@@ -6,10 +8,14 @@ module.exports = {
 
         const num = parseInt(args[0], 10) + 1;
 
-        if (!isNaN(num)) {
-            message.channel.bulkDelete(num);
+        if(!message.member.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) {
+            message.reply('You don\'t have the permission to use this command')
         } else {
-            message.reply({embeds: [clearHelp]})
+            if (!isNaN(num)) {
+                message.channel.bulkDelete(num);
+            } else {
+                message.reply({embeds: [clearHelp]})
+            }
         }
     }
 }
